@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 
 function Search() {
@@ -66,12 +67,12 @@ function Search() {
         <ul>
           {albums.map((album) => (
             <li key={ album.collectionId }>
-              <a
-                href={ `/album/${album.collectionId}` }
+              <Link
+                to={ `/album/${album.collectionId}` }
                 data-testid={ `link-to-album-${album.collectionId}` }
               >
                 {album.collectionName}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
